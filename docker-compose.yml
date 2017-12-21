@@ -2,7 +2,7 @@ version: '3'
 
 services:
   php:
-    build: ./php
+    image: marjamenge/docker-php5.3-apache2.2
     container_name: ${CONTAINER_PREFIX}.php
     volumes:
         - ./www:/var/www/html

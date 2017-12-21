@@ -1,0 +1,23 @@
+Listen 8088
+
+ServerName localhost
+DocumentRoot /var/www
+
+<VirtualHost *:80>
+</VirtualHost>
+
+<VirtualHost *:8088>
+
+    ServerName my_app
+    ServerAdmin admin@localhost.nl
+
+    DocumentRoot /var/www/html
+
+    <Directory /var/www/html>
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+
+</VirtualHost>
+

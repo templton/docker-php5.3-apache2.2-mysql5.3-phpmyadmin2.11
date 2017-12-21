@@ -6,7 +6,9 @@ services:
     container_name: ${CONTAINER_PREFIX}.php
     volumes:
         - ./www:/var/www/html
-        - ./logs:/var/log/apache2
+        - ./apachelogs:/var/log/apache2
+        - ./conf/apache2:/etc/apache2/sites-available
+        - ./conf/php:/etc/php5/apache2
         - /etc/localtime:/etc/localtime:ro
         - /etc/timezone:/etc/timezone:ro
     ports:
@@ -28,8 +30,7 @@ services:
     image: mysql:5.5
     container_name: ${CONTAINER_PREFIX}.mysql
     volumes:
-        - ./mysql/data:/var/lib/mysql
-        - ./mysql/conf.d:/etc/mysql/conf.d
+        - ./conf/mysql:/etc/mysql/conf.d
         - /etc/localtime:/etc/localtime:ro
         - /etc/timezone:/etc/timezone:ro
     ports:

@@ -23,8 +23,10 @@ MYSQL_PASSWORD=root
 Cd to dir /my_app and run it: \
 /my_app$ `docker-compose up`
 
-App: http://127.0.0.1:8080 
+**App**: http://127.0.0.1:8080 
 
-Phpmyadmin: http://127.0.0.1:8081
+**Phpmyadmin**: http://127.0.0.1:8081
+
+**Php-Mysql**: 172.16.238.13 / my_app / root
 
 

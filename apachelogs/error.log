@@ -58,3 +58,27 @@
 [Thu Dec 21 20:01:20 2017] [warn] pid file /var/run/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
 [Thu Dec 21 20:01:20 2017] [notice] Apache/2.2.22 (Ubuntu) PHP/5.3.10-1ubuntu3.26 with Suhosin-Patch configured -- resuming normal operations
 [Thu Dec 21 20:01:34 2017] [error] [client 172.24.0.1] PHP Fatal error:  Call to undefined function mysql_connect() in /var/www/html/sitex/settings/config.php on line 20
+[Wed Nov 13 18:07:02 2019] [notice] Apache/2.2.22 (Ubuntu) PHP/5.3.10-1ubuntu3.26 with Suhosin-Patch configured -- resuming normal operations
+[Wed Nov 13 18:07:28 2019] [error] [client 172.16.238.1] PHP Warning:  mysql_connect(): Can't connect to MySQL server on '172.16.238.13' (113) in /var/www/html/index.php on line 8
+[Wed Nov 13 18:08:08 2019] [error] [client 172.16.238.1] PHP Warning:  mysql_connect(): Can't connect to MySQL server on '172.16.238.13' (113) in /var/www/html/index.php on line 8
+[Wed Nov 13 18:08:52 2019] [error] [client 172.16.238.1] PHP Warning:  mysql_connect(): Can't connect to MySQL server on '172.16.238.13' (113) in /var/www/html/index.php on line 8
+[Wed Nov 13 18:09:33 2019] [error] [client 172.16.238.1] PHP Warning:  mysql_connect(): Can't connect to MySQL server on '172.16.238.13' (113) in /var/www/html/index.php on line 8
+[Wed Nov 13 18:13:18 2019] [error] [client 172.16.238.1] PHP Warning:  mysql_connect(): Can't connect to MySQL server on '172.16.238.13' (113) in /var/www/html/index.php on line 8
+[Wed Nov 13 18:13:18 2019] [error] [client 172.16.238.1] File does not exist: /var/www/html/favicon.ico, referer: http://127.0.0.1:8080/
+[Wed Nov 13 18:15:40 2019] [error] [client 172.16.238.1] PHP Warning:  mysql_connect(): Unknown MySQL server host 'mysql' (110) in /var/www/html/index.php on line 8
+[Wed Nov 13 18:19:20 2019] [notice] Apache/2.2.22 (Ubuntu) PHP/5.3.10-1ubuntu3.26 with Suhosin-Patch configured -- resuming normal operations
+[Wed Nov 13 18:20:08 2019] [error] [client 172.22.0.1] PHP Warning:  mysql_connect(): Unknown MySQL server host 'mysql' (110) in /var/www/html/index.php on line 8
+[Wed Nov 13 18:20:39 2019] [error] [client 172.22.0.1] PHP Warning:  mysql_connect(): Can't connect to MySQL server on '172.16.238.13' (4) in /var/www/html/index.php on line 8
+[Wed Nov 13 18:22:33 2019] [warn] pid file /var/run/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed Nov 13 18:22:33 2019] [notice] Apache/2.2.22 (Ubuntu) PHP/5.3.10-1ubuntu3.26 with Suhosin-Patch configured -- resuming normal operations
+[Wed Nov 13 18:22:34 2019] [error] [client 172.22.0.1] PHP Warning:  mysql_connect(): Unknown MySQL server host 'mysql' (110) in /var/www/html/index.php on line 8
+[Wed Nov 13 18:23:57 2019] [warn] pid file /var/run/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed Nov 13 18:23:57 2019] [notice] Apache/2.2.22 (Ubuntu) PHP/5.3.10-1ubuntu3.26 with Suhosin-Patch configured -- resuming normal operations
+[Wed Nov 13 18:28:04 2019] [notice] Apache/2.2.22 (Ubuntu) PHP/5.3.10-1ubuntu3.26 with Suhosin-Patch configured -- resuming normal operations
+[Wed Nov 13 18:30:30 2019] [notice] Apache/2.2.22 (Ubuntu) PHP/5.3.10-1ubuntu3.26 with Suhosin-Patch configured -- resuming normal operations
+[Wed Nov 13 18:30:40 2019] [error] [client 172.22.0.1] PHP Warning:  mysql_connect(): Access denied for user 'my_app'@'172.22.0.3' (using password: YES) in /var/www/html/index.php on line 8
+[Wed Nov 13 18:33:14 2019] [warn] pid file /var/run/apache2.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed Nov 13 18:33:14 2019] [notice] Apache/2.2.22 (Ubuntu) PHP/5.3.10-1ubuntu3.26 with Suhosin-Patch configured -- resuming normal operations
+[Wed Nov 13 18:33:28 2019] [error] [client 172.22.0.1] PHP Warning:  mysql_connect(): Access denied for user 'my_app'@'172.22.0.3' (using password: YES) in /var/www/html/index.php on line 8
+[Wed Nov 13 18:35:32 2019] [notice] Apache/2.2.22 (Ubuntu) PHP/5.3.10-1ubuntu3.26 with Suhosin-Patch configured -- resuming normal operations
+[Wed Nov 13 18:35:57 2019] [error] [client 172.22.0.1] PHP Warning:  mysql_connect(): Access denied for user 'my_app'@'172.22.0.3' (using password: YES) in /var/www/html/index.php on line 8

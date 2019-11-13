@@ -3,7 +3,6 @@ version: '3'
 services:
   php:
     image: marjamenge/docker-php5.3-apache2.2
-    container_name: ${CONTAINER_PREFIX}.php
     volumes:
         - ./www:/var/www/html
         - ./apachelogs:/var/log/apache2
@@ -15,11 +14,10 @@ services:
     links:
         - mysql
     networks:
-        static-network:
-            ipv4_address: 172.16.238.11
+        - project-net
+
   phpmyadmin:
     image: dnhsoft/phpmyadmin:4.0.10.9
-    container_name: ${CONTAINER_PREFIX}.phpmyadmin
     ports:
         - ${PHPMYAMDIN_PORT}:80
     links:
@@ -29,30 +27,33 @@ services:
         - DBUSER=${MYSQL_USER}
         - DBPASS=${MYSQL_PASSWORD}
     networks:
-        static-network:
-            ipv4_address: 172.16.238.12
+        - project-net
+
   mysql:
-    image: mysql:5.5
-    container_name: ${CONTAINER_PREFIX}.mysql
-    volumes:
-        - ./mysql/data:/var/lib/mysql
-        - ./mysql/conf.d:/etc/mysql/conf.d
-        - /etc/localtime:/etc/localtime:ro
-        - /etc/timezone:/etc/timezone:ro
-    ports:
-        - ${MYSQL_PORT}:3306
+    env_file:
+      - .env
+    image: mysql:5.7
+    command: --sql_mode=""
     environment:
-        - MYSQL_DATABASE=${MYSQL_DATABASE}
-        - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
-        - MYSQL_USER=${MYSQL_USER}
-        - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+      TZ: ${TZ}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DB: ${MYSQL_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    ports:
+      - 3306:3306
+    volumes:
+      - ./docker/mysql/dump:/docker-entrypoint-initdb.d
+      - mysql_project_data:/var/lib/mysql
+    hostname: mysql
     networks:
-        static-network:
-            ipv4_address: 172.16.238.13
+      - project-net
 
 networks:
-    static-network:
-        ipam:
-            driver: default
-            config:
-                - subnet: 172.16.238.0/24
+    project-net:
+        driver: bridge
+
+volumes:
+  mysql_project_data:
+    driver: local        
